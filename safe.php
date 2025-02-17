@@ -1,4 +1,4 @@
-o<?php
+<?php
 set_time_limit(0);
 ini_set('memory_limit', '512M');
 
@@ -14,7 +14,7 @@ function scanShellBackdoor($dir) {
     foreach ($files as $file) {
         if ($file->isFile() && pathinfo($file, PATHINFO_EXTENSION) === 'php') {
             $content = file_get_contents($file->getRealPath());
-            
+
             foreach ($backdoorPatterns as $pattern) {
                 if (strpos($content, $pattern) !== false) {
                     $suspiciousFiles[] = $file->getRealPath();
@@ -117,6 +117,9 @@ $suspiciousFiles = scanShellBackdoor($websiteRoot);
             margin-bottom: 20px;
             width: 60%;
         }
+        .copy-button {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -159,6 +162,24 @@ $suspiciousFiles = scanShellBackdoor($websiteRoot);
             <h3>✅ Tidak ditemukan shell backdoor.</h3>
         <?php } ?>
     </div>
+
+    <?php if (!empty($suspiciousFiles)) { ?>
+        <div class="copy-button">
+            <button onclick="copyCommand()">Copy rm -rf Command</button>
+        </div>
+    <?php } ?>
+
+    <script>
+        function copyCommand() {
+            var suspiciousFiles = <?php echo json_encode($suspiciousFiles); ?>;
+            var rmCommand = "rm -rf " + suspiciousFiles.map(file => '"' + file + '"').join(' ');
+            navigator.clipboard.writeText(rmCommand).then(function() {
+                alert("Copied the rm -rf command: " + rmCommand);
+            }, function() {
+                alert("Failed to copy the command.");
+            });
+        }
+    </script>
 
 </body>
 </html>
