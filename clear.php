@@ -8,10 +8,8 @@ function scanShellBackdoor($dir) {
         'file_get_contents(', 'file_put_contents(', 'fopen(', 'fwrite(', 'fread(', 'fclose(', 'readfile(', 'unlink(', 'rename(', 'copy(',
         'exec(', 'system(', 'passthru(', 'shell_exec(', 'popen(', 'eval(', 'assert(',
         'fsockopen(', 'stream_socket_client(', 'curl_init(', 'curl_exec(', 'file(',
-        'base64_encode(', 'base64_decode(', 'gzinflate(', 'str_rot13(', 'gzuncompress(', 'gzdeflate(', 'gzcompress(', 'gzdecode(', 'gzencode(',
-        '$_GET', '$_POST', '$_REQUEST', '$_SERVER', '$_FILES', '$_COOKIE', '$_SESSION',
-        'phpinfo(', 'ini_set(', 'ini_get(', 'ini_alter(', 'ini_restore(',
-        'get_defined_vars(', 'get_defined_functions(', 'get_defined_constants(', 'get_included_files(', 'get_required_files(', 'get_loaded_extensions(', 'get_extension_funcs(', 'get_cfg_var(', 'get_current_user(', 'get_ini(', 'get_magic_quotes_gpc(', 'get_magic_quotes_runtime(', 'get_headers(', 'get_meta_tags(', 'get_browser('
+        'base64_encode(', 'base64_decode(', 'gzinflate(', 'str_rot13(',
+        'phpinfo(', 'ini_set(', 'ini_get(', 'get_defined_vars(', 'get_defined_functions(', 'get_defined_constants(', 'get_included_files(', 'get_required_files(', 'get_loaded_extensions(', 'get_extension_funcs(', 'get_cfg_var(', 'get_current_user(', 'get_ini(', 'get_magic_quotes_gpc(', 'get_magic_quotes_runtime(', 'get_headers(', 'get_meta_tags(', 'get_browser('
     ];
 
     $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
